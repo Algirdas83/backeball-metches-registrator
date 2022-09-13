@@ -3,6 +3,8 @@ import db from './dataBase/connect.js'
 import cors from 'cors'
 import session from 'express-session'
 import user from './controllers/users.js'
+import maches from './controllers/matches.js'
+import points from './controllers/points.js'
 
 
 
@@ -41,7 +43,12 @@ app.use(session({
 
 
 
+
 app.use('/api/user/', user)
+
+app.use('/api/maches/', maches)
+ 
+app.use('/api/points/', points)
  
 
 app.listen(3000)

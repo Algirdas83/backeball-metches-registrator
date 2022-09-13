@@ -1,0 +1,36 @@
+
+
+.header-main{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: gray solid 1px;
+
+
+}
+
+.logo{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #f77f00;
+}
+
+
+.nav-list{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-list-item{
+    list-style: none;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2ec4b6;
+}

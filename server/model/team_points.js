@@ -9,14 +9,20 @@ const Points = (sequelize) => {
 
     const Schema = {
 
-        team_points : {
+        team1_points : {
             type: DataTypes.INTEGER
         },
-        point_time:{
-            type: DataTypes.DATE
+        team2_points : {
+            type: DataTypes.INTEGER
         },
-        team_name : {
+        team1_name : {
             type: DataTypes.STRING
+        },
+        team2_name : {
+            type: DataTypes.STRING
+        },
+        match_id:{
+            type: DataTypes.INTEGER
         }
        
     

@@ -7,20 +7,20 @@ const Match = (sequelize) => {
 
     const Schema = {
 
-        match_now : {
+        team_1 : {
             type: DataTypes.STRING
         },
-        future_match : {
+        team_2 : {
             type: DataTypes.STRING
+        },
+        logo1:{
+            type: DataTypes.STRING(2000)
+        },
+       logo2:{
+            type: DataTypes.STRING(2000)
         },
         match_start_time:{
-            type: DataTypes.DATE
-        },
-        team_name:{
-            type: DataTypes.STRING
-        },
-        logo:{
-            type:DataTypes.STRING
+            type:DataTypes.DATE
         },
         tournament_title:{
             type: DataTypes.STRING

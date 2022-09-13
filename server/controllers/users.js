@@ -33,4 +33,43 @@ router.post('/register', async (req, res) => {
 })
 
 
+router.post('/login', async (req, res) => {
+
+    try {
+        
+        const user = await db.Users.findOne( {where: {email:req.body.email} } )
+
+        if(!user)
+        return res.status(401).send('Toks vartotojas nerastas')
+
+         if(await bcrypt.compare(req.body.password, user.password)){
+
+            req.session.loggedIn = true
+            // req.session.user = {
+            //     id: user.id,
+            //     name: user.name,
+            //     last_name: user.last_name,
+            //     email: user.email,
+            //     role: user.role
+        
+            //    }
+            return res.status(200).json({message: 'Sekmingai prisijungete'})
+         }
+         else{
+            
+           return res.status(401).send('Nepavyko prisijungti')
+         }
+
+         
+
+    } catch (error) {
+
+        console.log(error)
+        res.status(500).send('ivyko serverio klaida')
+        
+    }
+    
+})
+
+
 export default router

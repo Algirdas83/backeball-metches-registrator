@@ -1,0 +1,33 @@
+
+
+
+
+.btn-2{
+    background-color: #219ebc;
+}
+
+.btn-3{
+    background-color: #023047;
+}
+
+.btn-1 {
+    background-color: #8ecae6;
+}
+
+
+
+.admin-points{
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-team1-main{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-img-table{
+    width: 15%;
+}

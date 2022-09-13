@@ -37,6 +37,7 @@ db.Users = Users(sequelize)
 db.Match = Match(sequelize)
 db.Points = Points(sequelize)
 
-await sequelize.sync({ alert: true });
+
+await sequelize.sync({ alter: false });
 
 export default db
