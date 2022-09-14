@@ -9,31 +9,31 @@ router.get('/', async (req, res) => {
 
     try {
 
-        const allMatches =  await db.Match.findAll()
+        const allMatches =  await db.Match.findAll({ raw: true })
+       //raw: true - panaikina modelio instansa ir grazina
+        for(const index in allMatches) {
+            //   console.log('Testas', data.dataValues);
+            //let allStuf =  data.dataValues
+            allMatches[index].team1_point = 0
+            allMatches[index].team2_point = 0
+
+            const getPoints = await db.Points.findAll({ where:{match_id: allMatches[index].id} })
         
+            getPoints.map(point => {
 
-        
-        // allMatches.map( async(data) => {
-        //     //   console.log('Testas', data.dataValues);
-        //     let allStuf =  data.dataValues
-        //     let team1_point = 0
-        //     let team2_point = 0
-        //     const getPoints = await db.Points.findAll({ where:{match_id: data.id} })
-        
-        // getPoints.map(point => {
+                if(point.team1_points)
+                allMatches[index].team1_point += point.team1_points
+                
 
-        //     if(point.team1_points)
-        //     team1_point += point.team1_points
-            
+                if(point.team2_points)
+                allMatches[index].team2_point += point.team2_points
 
-        //     if(point.team2_points)
-        //     team2_point += point.team2_points
-
-            
-        // })
+                
+            })
          
-        
-        // })
+           
+        }
+
         res.json(allMatches)
         
         

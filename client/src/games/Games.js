@@ -16,15 +16,7 @@ const Games = () => {
    
   const {matches, pointsTable} = useContext(MainContext)
 
-//   matches.map(data => {
 
-//     axios.get(`/api/points/get-points-sum/${data.id}`)
-//     .then(resp => {
-//          
-//         console.log(resp);
-       
-//     })
-// })
 
   useEffect(() => {
    
@@ -57,16 +49,15 @@ const Games = () => {
                         <tr key={teams.id}>
                         <td>{teams.team_1}</td>
                         <td> <img className="game-image" src={teams.logo1} alt="" /></td>
-                        <td>Points</td>
+                        <td>{teams.team1_point}</td>
                         <td> <img src={SvgLogi} alt="" /></td>
-                        <td>points team2</td>
+                        <td>{teams.team2_point}</td>
                         <td> <img className="game-image" src={teams.logo2} alt="" /></td>
-                        <td>{teams.team_2}</td>
+                        <td></td>
                         <td><Link to={'/admin/' + teams.id}>Taskai</Link></td>
                     </tr>
                       )     
                     })
-
                         
                     }
                    
